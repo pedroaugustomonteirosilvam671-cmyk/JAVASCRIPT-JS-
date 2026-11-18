@@ -1,0 +1,40 @@
+<body>
+  <h1>Contador com Closure</h1>
+  <p>Valor atual: <strong id="visor">0</strong></p>
+
+  <button onclick="atualizar('incrementar')">+ Incrementar</button>
+  <button onclick="atualizar('decrementar')">- Decrementar</button>
+
+  <script>
+    function criarContador() {
+      let contagem = 0;
+
+      return {
+        incrementar: function () {
+          contagem++;
+          return contagem;
+        },
+        decrementar: function () {
+          contagem--;
+          return contagem;
+        },
+        valor: function () {
+          return contagem;
+        }
+      };
+    }
+
+    const meuContador = criarContador();
+
+    function atualizar(acao) {
+      if (acao === "incrementar") {
+        meuContador.incrementar();
+      } else {
+        meuContador.decrementar();
+      }
+
+      document.getElementById("visor").innerText = meuContador.valor();
+      console.log("Valor no console:", meuContador.valor());
+    }
+  </script>
+</body>

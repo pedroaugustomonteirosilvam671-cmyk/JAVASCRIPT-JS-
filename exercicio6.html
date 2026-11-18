@@ -1,0 +1,12 @@
+<script>
+    let soma = 0;
+
+    let numero = Number(prompt("Digite um número para somar (ou 0 para sair)"))
+
+    while (numero !==0) {
+        soma = soma + numero;
+         numero = Number(prompt("Digite outro número (ou 0 para encerrar):"));
+    }
+
+    alert('A soma total dos números digitados é: ${soma}');
+</script>
